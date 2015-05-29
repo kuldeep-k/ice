@@ -607,6 +607,8 @@
      */
     acceptChange: function (node) {
       this.acceptRejectChange(node, true);
+      // Added by kuldeep 
+      this.pluginsManager.fireAcceptChange(node);
     },
 
     /**
@@ -617,6 +619,9 @@
      */
     rejectChange: function (node) {
       this.acceptRejectChange(node, false);
+      // Added by kuldeep 
+      this.pluginsManager.fireRejectChange(node);
+      
     },
 
     /**

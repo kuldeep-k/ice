@@ -327,7 +327,23 @@ IcePluginManager.prototype = {
         this.plugins[i].caretUpdated();
       }
     }
+  },
+  // Added by kuldeep
+  fireRejectChange: function(node) {
+    for (var i in this.plugins) {
+      if (this.plugins[i].rejectChange) {
+        this.plugins[i].rejectChange(node);
+      }
+    }
+  },
+  fireAcceptChange: function(node) {
+    for (var i in this.plugins) {
+      if (this.plugins[i].acceptChange) {
+        this.plugins[i].acceptChange(node);
+      }
+    }
   }
+  
 };
 
 exports._plugin = {};
